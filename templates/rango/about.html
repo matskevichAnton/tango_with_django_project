@@ -1,23 +1,20 @@
-<!DOCTYPE html>
+{% extends "rango/base.html" %}
+
+{% load static %}
 {% load staticfiles %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-    <body>
-        <h1>Rango says...</h1>
+{% block title_block %}About Rango{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+    
+    <h1>Rango says...</h1>
         <div>
-        hey there partner! <br />
-        <strong>This tutorial has been put together by {{ name }}</strong><br />
+            here is the about page. <br />
+            This tutorial has been put together by {{ name }}<br />
         </div>
-        <div>
-            <img src="{% static 'images/rango.jpg' %}"
-            alt="Picture of Rango" />
-        <a href="/rango/">back</a><br />
-            <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a cat">
-        </div>
-        </body>
-</html>
+
+    <a href="/rango/">back</a><br />
+    <img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" />
+    <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat" />
+</div>
+{% endblock %}
